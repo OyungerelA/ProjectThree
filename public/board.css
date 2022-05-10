@@ -29,7 +29,7 @@ button{
 }
 
 .back-btn-img{
-    max-height: 2rem;
+    max-height: 4.5vh;
 }
 
 .board-name{
@@ -177,8 +177,8 @@ button{
     top: 45px;
     left: 20px;
     background: none;
-    height: 12.8rem;
-    width: 13.1rem;
+    height: 31vh;
+    width: 16.4vw;
     overflow-y: scroll;
     margin-left: 9px;
     margin-top: 5px;
