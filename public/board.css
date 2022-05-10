@@ -70,18 +70,28 @@ button{
 }
 
 .addNote-btn{
-    margin-top: 15rem;
+    margin-top: 35vh;
 }
 
 .addNote-btn-img{
-    max-height: 2rem;
+    max-height: 5vh;
     cursor: pointer;
 }
 
 .color-select{
-    margin-top: 5rem;
+    margin-top: 15vh;
     cursor: pointer;
     background-color: white;
+}
+
+#audio-control-btn{
+    margin-top: 25vh;
+    cursor: pointer;
+}
+
+#audio-btn-img{
+    width: 3vh;
+    height: auto;
 }
 
 .board-area{
@@ -247,14 +257,4 @@ button{
 
 #user-list{
     list-style: none;
-}
-
-#audio-control-btn{
-    margin-top: 15rem;
-    cursor: pointer;
-}
-
-#audio-btn-img{
-    width: 15px;
-    height: auto;
 }
