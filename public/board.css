@@ -20,6 +20,7 @@ button{
 
 .top-bar *{
     background-color: lightskyblue;
+    font-size: 1rem;
 }
 
 .back-btn{
@@ -113,7 +114,6 @@ button{
 
 .board-area *{
     background-color: lightcyan;
-    font-size: 20px;
 }
 
 .board-area img{
@@ -188,6 +188,7 @@ button{
 
 .text-wrapper p{
     background: none;
+    font-size: 1rem;
 }
 
 /* container holding names of users that contributed to a note */
