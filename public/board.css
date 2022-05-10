@@ -113,10 +113,11 @@ button{
 
 .board-area *{
     background-color: lightcyan;
+    font-size: 20px;
 }
 
 .board-area img{
-    width: 15rem;
+    width: 18vw;
     height: auto;
     margin: 1rem;
     margin-top: 2rem;
@@ -176,10 +177,10 @@ button{
     top: 45px;
     left: 20px;
     background: none;
-    height: 11rem;
-    width: 13.5rem;
+    height: 12.8rem;
+    width: 13.1rem;
     overflow-y: scroll;
-    margin-left: 7px;
+    margin-left: 9px;
     margin-top: 5px;
     cursor: pointer;
     white-space: pre-wrap;   
