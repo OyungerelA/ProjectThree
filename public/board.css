@@ -3,6 +3,7 @@
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
+    font-size: large;
 }
 
 button{
@@ -74,7 +75,7 @@ button{
 }
 
 .addNote-btn-img{
-    max-height: 5vh;
+    max-height: 6vh;
     cursor: pointer;
 }
 
@@ -82,6 +83,8 @@ button{
     margin-top: 15vh;
     cursor: pointer;
     background-color: white;
+    width: 6vw;
+    height: 4vh;
 }
 
 #audio-control-btn{
@@ -90,7 +93,7 @@ button{
 }
 
 #audio-btn-img{
-    width: 20vh;
+    width: 3vh;
     height: auto;
 }
 
