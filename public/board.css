@@ -75,7 +75,7 @@ button{
 }
 
 .addNote-btn-img{
-    max-height: 5vh;
+    max-height: 4.5vh;
     cursor: pointer;
 }
 
@@ -83,8 +83,8 @@ button{
     margin-top: 15vh;
     cursor: pointer;
     background-color: white;
-    width: 5vw;
-    height: 3vh;
+    width: 6vw;
+    height: 4vh;
 }
 
 #audio-control-btn{
