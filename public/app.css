@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    background-color: lightcyan;
+}
+
+input{
+    background: white;
+    border: solid 1px black;
+    border-radius: 3px;
+}
+
+/* container for the website heading, 'Stick It */
+.heading-container{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    background: none;
+}
+
+/* Specifying the font and size for the heading */
+.heading-container h1{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 50px;
+}
+
+.logo{
+    max-width: 50px;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+/* Container for the 'STUCK' text that will be used to show instructions when hovered over */
+.help-container{
+    display: flex;
+    /* positioning at the right end */
+    flex-direction: row-reverse;
+    width: 100vw;
+    /* slightly spaced out from the right end */
+    margin-left: -2rem;
+}
+
+.help-container h1{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 100vw;
+    background-color: lightcyan;
+}
+
+#join-form{
+    background-color: lightskyblue;
+    padding: 70px;
+    border-radius: 15px;
+    margin-top: 10vh;
+}
+
+.input-container *{
+    margin: 0.6rem;
+    background-color: lightskyblue;
+}
+
+.input-container input{
+    background-color: white;
+
+}
+
+/* container for submit button to go the main page */
+.button-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.button-container *{
+    margin: 0.3rem;
+}
+
+.user-container{
+    margin-bottom: 3rem;
+}
+
+/* submit button to go the main page */
+#join-btn{
+    background: none;
+    border: none;
+    padding-top: 2rem;
+}
+
+#join-btn-img{
+    max-width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+.instructions{
+    background-color: #FFDA8F;
+    position: absolute;
+    width: 15vw;
+    height: 47vh;
+    top: 27vh;
+    left: 80vw;
+    text-align: center;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* initially invisible, displayed on hover */
+    display: none;
+}
+
+.instructions p{
+    background-color: #FFDA8F;
+    font-size: 14px;
+    font-style: italic;
+    border-radius: 15px;
+}

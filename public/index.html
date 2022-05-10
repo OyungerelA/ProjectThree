@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/sticky-notes.png">
+    <link rel="stylesheet" href="app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Gloria+Hallelujah&family=Luckiest+Guy&family=Nanum+Pen+Script&family=Poppins:wght@300&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <title>Stick It!</title>
+</head>
+<body>
+    <div class="heading-container">
+        <img src="images/sticky-notes.png" alt="" class="logo">
+        <h1>STICK IT!</h1>
+    </div>
+    <!-- Main container containing input form and submit button -->
+    <div class="main-container">
+        <form class="input-container" id="join-form">
+            <div class="user-container">
+                <p>user name: </p>
+                <input type="text" class="name-input" id="name-input" placeholder="" autocomplete="off" required>
+            </div>
+            <div>
+                <p>room name: </p>
+                <input type="text" class="room-input" id="room-input" placeholder="" autocomplete="off" required>
+            </div>
+            <div class="button-container">
+                <button id="join-btn">
+                    <img src="images/startArrow.png" id="join-btn-img" alt="">
+                </button>
+                <p>let's go!</p>
+            </div>
+        </form>
+    </div>
+    <!-- Container for the 'STUCK' text that will display instructions when hovered over -->
+    <div class="help-container" id="help-container">
+        <h1 id="help-text">STUCK?</h1>
+    </div>
+    <!-- Container for the instructions text -->
+    <div class="instructions" id="instructions">
+        <br>
+        <p>This is a collaborative note taking application built to simulate a real communal sticky note board.</p>
+        <br>
+        <p>Enter your name and room that you want to join. You can collaborate in real-time with your colleagues if you all join the same room.</p>
+        <br>
+        <p>You can choose a color from the available seven options for your sticky note and use the '+' sign to add it to the board.</p>
+        <br>
+        <p>Happy note taking! 💙</p>
+    </div>
+
+</body>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script src='app.js'></script>
+</html>

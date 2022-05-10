@@ -1,0 +1,260 @@
+*{
+    background-color: azure;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+button{
+    border: none;
+}
+
+.top-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: lightskyblue;
+    height: 10vh;
+}
+
+.top-bar *{
+    background-color: lightskyblue;
+}
+
+.back-btn{
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.back-btn-img{
+    max-height: 2rem;
+}
+
+.board-name{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.member-count{
+    margin-right: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.defaultText{
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+.main-area{
+    display: flex;
+    flex-direction: row;
+}
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    background-color: lightslategrey;
+    left: 0;
+    align-items: center;
+    width: 8vw;
+    height: 90vh;
+}
+
+.side-bar *{
+    background-color: lightslategrey;
+}
+
+.addNote-btn{
+    margin-top: 15rem;
+}
+
+.addNote-btn-img{
+    max-height: 2rem;
+    cursor: pointer;
+}
+
+.color-select{
+    margin-top: 5rem;
+    cursor: pointer;
+    background-color: white;
+}
+
+.board-area{
+    background-color: lightcyan;
+    top: 10vh;
+    left: 8vw;
+    width: 92vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+
+.board-area *{
+    background-color: lightcyan;
+}
+
+.board-area img{
+    width: 15rem;
+    height: auto;
+    margin: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.note-box-wrapper{
+    position: relative;
+    height: fit-content;
+}
+
+.noteBox{
+    position: sticky;
+}
+
+.input-area{
+    display: none;
+}
+
+.closeInput-btn-img{
+    position: absolute;
+    top: 37.7vh;
+    left: 75.8vw;
+    width: 13px;
+    height: auto;
+    cursor: pointer;
+    background: none;
+}
+
+.input-box{
+    position: absolute;
+    top: 40vh;
+    left: 35vw;
+    width: 40vw;
+    height: 20vh;
+    border: 3px solid lightskyblue;
+    padding: 10px;
+    /* display: none; */
+}
+
+.submit-btn{
+    position: absolute;
+    border: 1px solid black;
+    top: 63.5vh;
+    left: 53vw;
+    width: 80px;
+    height: 28px;
+    cursor: pointer;
+}
+
+#audio{
+    display: none;
+}
+
+.text-wrapper{
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    background: none;
+    height: 11rem;
+    width: 13.5rem;
+    overflow-y: scroll;
+    margin-left: 7px;
+    margin-top: 5px;
+    cursor: pointer;
+    white-space: pre-wrap;   
+}
+
+.text-wrapper p{
+    background: none;
+}
+
+/* container holding names of users that contributed to a note */
+.user-wrapper{
+    position: absolute;
+    top: 242px;
+    left: 27px;
+    height: 2rem;
+    width: 13.6rem;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.user-wrapper p{
+    background: none;
+    font-size: smaller;
+    font-style: italic;
+    color: gray;
+}
+
+/* block area for obscuring the background when user is typing input, slighlt opaque */
+.block-area{
+    position: absolute;
+    top: 10vh;
+    width: 100vw;
+    height: 90vh;
+    background-color: white;
+    opacity: 0.1;
+    display: none;
+}
+
+/* make the scrollbar less busy */
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: none;
+}
+
+#user-list-area{
+    position: absolute;
+    right: 0;
+    min-width: fit-content;
+    width: 10vw;
+    z-index: 2;
+    display: none;
+    text-align: center;
+    padding-right: 20px;
+    background-color: #ccddea;
+}
+
+#user-list-area *{
+    background-color: #ccddea;
+    text-align: center;
+    font-style: italic;
+}
+
+#user-list{
+    list-style: none;
+}
+
+#audio-control-btn{
+    margin-top: 15rem;
+    cursor: pointer;
+}
+
+#audio-btn-img{
+    width: 15px;
+    height: auto;
+}
