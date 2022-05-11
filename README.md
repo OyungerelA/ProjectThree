@@ -54,7 +54,7 @@ I used the filter function to get the specific note object that was called from 
 After 'finishing' up my Note class, I began working on implementing neDB. Other than the small twitter-like application we made in class, I didn't have much experience working with databases, so I reviewed the concepts and referred back to our previous classes. After working on it for a while, I added the code for neDB and finally ran it, but got a lot of errors whenever I logged into a second client to see the fetched note data. Some empty notes were showing but notes with any text within it, was not showing at all. Sometimes, note texts would overlap with each other, which is an error that I never got before. 
 
 
-<img src="public/documentation/error1.png" width="300"/>
+<img src="public/documentation/error1.png" width="500"/>
 
 
 Largely due to the complex code that I had for adding texts, after two days of tries, I could not solve the issue and tried going back to my version of the code without the Note class to see if I could 
@@ -67,13 +67,13 @@ After spending so much time on debugging issues related to neDB and finally kind
 
 Another edit I wanted to make since my last project was showing the users in the room. For some reason, I thought I would need a database to get all the usernames of clients in the room, but it turned out to be quite simple. Whenever the mouse hovers over the 'Members' text, a block will appear containing all the current users in the room. 
 
-<img src="public/documentation/userlist.png" width="300"/>
+<img src="public/documentation/userlist.png" width="500"/>
 
 During user testing my project 2 on the big screen, I saw that my website looked very oddly sized. Although on my system, the sizing was appropriate, on systems with larger screens, the fonts, buttons and images looked a bit too small. This was a big pull down in terms of user experience, so I intentionally worked on the large Mac desktops in the library to figure out the appropriate dimensions. For images and also some fonts, I tried to use vh/vw instead of pixels and em/rem. But I realized I had to extra cautious when using vh/vw because even though using them to resize the elements made sure that the sizes of elements would be relative to the screen, it sometimes made some elements too big on smaller screens, so I had to constantly switch between screens to see which worked, which didn't and what to change. Now it looks a lot more natural even on larger screen, so users would not have to struggle to read the extremely small texts and buttons. 
 
 While doing user testing with my friend, she recommended that it would be helpful to have mute sound options. Especially now with the added sound effects to add note/text actions on top of the previously existing remove sound, some people may not want to repeatedly hear the sound, so it can be helpful to have mute option. I added a button at the bottom of the side bar that once pressed, will mute all sound effects, and pressed again, will enable sound. 
 
-<img src="public/documentation/soundoption.png" width="300"/>
+<img src="public/documentation/soundoption.png" width="500"/>
 
 Altogether, these were all the changes that I made: implementing databases, adding sound to add the connected element to it, making sizing more appropriate and adding sound options for better user experience. I was quite content with the design of the website, so mostly kept it the same way as Project 2. I didn't want to make changes just for the sake of making changes, so I tried to only make edits that made sense and tangibly improved user experience. 
 
