@@ -47,6 +47,29 @@ button{
     cursor: pointer;
 }
 
+/* area for displaying the user names of clients in the room */
+#user-list-area{
+    position: absolute;
+    right: 0;
+    min-width: fit-content;
+    width: 10vw;
+    z-index: 2;
+    display: none;
+    text-align: center;
+    padding-right: 20px;
+    background-color: #ccddea;
+}
+
+#user-list-area *{
+    background-color: #ccddea;
+    text-align: center;
+    font-style: italic;
+}
+
+#user-list{
+    list-style: none;
+}
+
 .defaultText{
     padding-left: 10px;
     font-weight: 700;
@@ -88,6 +111,7 @@ button{
     height: 4vh;
 }
 
+/* button for controlling sound */
 #audio-control-btn{
     margin-top: 25vh;
     cursor: pointer;
@@ -155,7 +179,6 @@ button{
     height: 20vh;
     border: 3px solid lightskyblue;
     padding: 10px;
-    /* display: none; */
 }
 
 .submit-btn{
@@ -224,7 +247,7 @@ button{
     display: none;
 }
 
-/* make the scrollbar less busy */
+/* make the scrollbar less busy*/
 ::-webkit-scrollbar {
     width: 1px;
 }
@@ -240,26 +263,4 @@ button{
 
 ::-webkit-scrollbar-thumb:window-inactive {
     background: none;
-}
-
-#user-list-area{
-    position: absolute;
-    right: 0;
-    min-width: fit-content;
-    width: 10vw;
-    z-index: 2;
-    display: none;
-    text-align: center;
-    padding-right: 20px;
-    background-color: #ccddea;
-}
-
-#user-list-area *{
-    background-color: #ccddea;
-    text-align: center;
-    font-style: italic;
-}
-
-#user-list{
-    list-style: none;
 }

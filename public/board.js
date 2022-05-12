@@ -8,12 +8,11 @@ let socket = io();
 let count=0;
 let userNames = [];
 let colorVal, temp, currNote, text;
+
 // flag that when true means the user changed text, when false means user inputted text for the first time
 let flag = false;
 let notes = [];
-let id;
-let roomName;
-let noteObj;
+let id, roomName, noteObj;
 
 // getting confirmation that the client is connected
 socket.on('connect', () => {
@@ -37,19 +36,19 @@ socket.on('roomName', (data) => {
     roomName = data;
     boardNameArea.appendChild(boardName);
 
+    // getting all data from the database
     fetch('/allNotes')
     .then(res => res.json())
     .then(data => {
         let noteData = data.data;
-        console.log(noteData);
-        console.log(noteData.length);
+
+        // displaying the fetched note images on the board 
         for (let i=0; i< noteData.length; i++){
-            // if (noteData[i].id)
             addNote(noteData[i].color, noteData[i].id);
         }
 
+        // if there is text inside the note, display it
         for (let i=0; i< noteData.length; i++){
-            // if (noteData[i].id)
             if (noteData[i].text != ''){
                 addText(noteData[i].id, noteData[i].text, false);
             }        
@@ -110,23 +109,6 @@ socket.on('noteColor', (data) => {
         room: `${roomName}`
     }
     notes.push(noteObject);
-    console.log(notes);
-
-    // let noteObjectJSON = JSON.stringify(noteObject);
-    // console.log(noteObjectJSON);
-
-    // fetch('/noteData', {
-    //     method: 'POST', 
-    //     headers: {'Content-Type': 'application/json'},
-    //     body: noteObjectJSON
-    // })
-
-    // .then(res => res.json())
-    // .then(data => {
-    //     console.log(data);
-    //     if (data.task == "success"){
-    //     }
-    // })
 })
 
 // upon receiving the id of the sticky note whose remove icon was clicked
@@ -136,8 +118,9 @@ socket.on('removeIconClicked', (id) => {
 
     let id_num = id.match(/\d/g);
     id_num = id_num.join(""); 
+
+    // removing the note that was deleted from the array
     notes = notes.filter((e) => {return e.id != id_num});
-    // console.log(notes);
 })
 
 // upon receiving the details of the text that was submitted for the note
@@ -145,21 +128,6 @@ socket.on('noteTextDetails', (data) => {
     console.log(data.noteID, data.text, data.contributor);
     // call the add text function to add and display the text on the sticky note
     addText(data.noteID, data.text, data.type);
-
-    let id_num = data.noteID.match(/\d/g);
-    id_num = id_num.join(""); 
-    let note = notes.filter((e) => e.id == id_num);
-    // note[0]['text'] = data.text;
-    // note[0]['type'] = data.type;
-    console.log(notes);
-
-    // if (!(note[0]['contributors'].includes(data.contributor))){
-    //     note[0]['contributors'].push(data.contributor);
-    // }
-
-    // if (!(notes.indexOf(data.Contributor)>-1)){
-    //     note.contributors.append(data.contributor);
-    // }
 })
 
 // function for adding a note on the board with the corresponding color and value received from the server
@@ -179,7 +147,6 @@ function addNote(color, value){
     let boardArea = document.getElementById('board-area');
 
     // based on the value of the color received from server, determine the source of image
-    // value 1 corresponds to yellow note
     note.src = 'images/note'+color+'.png';
 
     noteWrapper.appendChild(note);
@@ -202,6 +169,7 @@ function addNote(color, value){
     noteWrapper.appendChild(removeIcon);
     boardArea.appendChild(noteWrapper);
 
+    // play a soft pop sound effect whenever a note is added
     let sound = document.getElementById('audio2');
     sound.play();
 }
@@ -224,17 +192,6 @@ function addText(noteID, noteText, noteType){
         noteArea.appendChild(textWrapper);
         noteArea.style.position = 'relative';
         textWrapper.style.position = 'absolute';
-
-        // for displaying name of the user who contributed to/edited the text for this specific sticky note
-        let userListWrapper = document.createElement('div');
-        userListWrapper.id = `user-wrapper${noteID}`;
-        userListWrapper.classList.add('user-wrapper');
-        // p element containing user names of users that contributed to this note
-        let textUserList = document.createElement('p');
-        textUserList.id = `textUser${noteID}`;
-        // textUserList.innerHTML = noteContributor;
-        // userListWrapper.appendChild(textUserList);
-        // noteArea.appendChild(userListWrapper);
     }
 
     // else means that the text was updated, so will need to remove the old text and change it with the updated version
@@ -247,18 +204,9 @@ function addText(noteID, noteText, noteType){
         text.id = `text${noteID}`;
         text.innerHTML = noteText;
         parent.appendChild(text);
-
-        // as the noteID sent from server consists of strings followed by the id, the following 2 lines are for only getting the number id of the noteID
-        let id = noteID.match(/\d/g);
-        id = id.join("");   
-
-        // let userListText = document.getElementById(`textUser${id}`);
-        // // if the user's name is not already displayed, add it
-        // if (!((userListText.innerHTML).includes(noteContributor))){
-        //     userListText.innerHTML += `, ${noteContributor}`;
-        // }
     }
 
+    // playing a soft pop sound effect whenever a text gets added
     let sound = document.getElementById('audio2');
     sound.play();
 }
@@ -274,18 +222,19 @@ function removeElement(id){
     let elem = document.getElementById(id);
     console.log('returned' + id);
 
-    // play the sound effect
+    // play paper crumpling sound effect whenever a note is deleted
     let sound = document.getElementById('audio');
     sound.play();
+
     return elem.parentNode.removeChild(elem);    
 }
 
 window.addEventListener('load', () => {
     let color;
     let backBtn = document.getElementById('back-btn');
+
     // if back button pressed, go back to landing page
     backBtn.addEventListener('click', () => {
-        // window.history.back()
         window.location.href = "/";
     })
 
@@ -303,6 +252,7 @@ window.addEventListener('load', () => {
             id_num = 1;
         }
 
+        // data object to be sent to the database
         let noteObject = {
             id: `${id_num}`,
             color: color,
@@ -311,12 +261,9 @@ window.addEventListener('load', () => {
             room: `${roomName}`
         }
     
-        // notes.push(noteObject);
-        // console.log(notes);
-    
         let noteObjectJSON = JSON.stringify(noteObject);
-        console.log(noteObjectJSON);
     
+        // send it to server
         fetch('/noteData', {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'},
@@ -422,13 +369,12 @@ window.addEventListener('load', () => {
     })
 
     let audioBtn = document.getElementById('audio-btn-img');
+
     // flag for changing the image of the audio control (true means the audio is on, false means the audio is off)
     let flag2 = true; 
     audioBtn.addEventListener('click', () => {
         console.log('audio image clicked');
 
-        // audioBtn.src = 'images/mute.png'
-        console.log(audioBtn.src);
         if (flag2==true){
             audioBtn.src = 'images/mute.png';
             flag2 = false;
@@ -445,7 +391,6 @@ window.addEventListener('load', () => {
             document.getElementById('audio2').muted = false;
         }
     })
-
 })
 
 

@@ -48,7 +48,6 @@
             </select>
             <button id="audio-control-btn">
                 <img src="images/unmute.png" alt="" id="audio-btn-img">
-                <!-- <img src="images/mute.png" alt=""> -->
             </button>
         </div>
         <!-- board area where the sticky notes and text will be displayed -->
@@ -61,16 +60,15 @@
     <!-- input area where the user can type in their notes on 'textarea' and submit to have it displayed on the sticky note -->
     <div class="input-area" id="input-area">
         <img src="images/cancel.png" class="closeInput-btn-img" id="closeInput-btn-img" alt="close text area button">
-        <textarea name="text" class="input-box" id="input-box" rows="14" cols="10" wrap="soft" placeholder="Type your note here:" autocomplete="off"></textarea>
+        <textarea autofocus name="text" class="input-box" id="input-box" rows="14" cols="10" wrap="soft" placeholder="Type your note here:" autocomplete="off"></textarea>
         <button class="submit-btn" id="submit-btn">Enter</button>
     </div>
 
     <!-- sound effect of crumpling paper that will be played for all users whenever a sticky note gets deleted -->
     <audio id="audio" src="audio/crumple_paper.mp3"></audio>
+    <!-- sound effect of soft pop sound that will be played for all users whenever a note or text gets added -->
     <audio id="audio2" src="audio/alert.mp3"></audio>
 </body>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 <script src='board.js'></script>
 </html>
-
-<!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam perferendis nostrum deserunt hic tenetur rem ad aut odit, quos eaque fugiat impedit mollitia laudantium? Adipisci architecto ratione perspiciatis autem eius? -->
