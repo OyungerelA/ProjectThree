@@ -2,7 +2,7 @@
 
 Project 3 - Create a web application that has both client-side and server side code. Similar to Project #2, users who engage with your application site must have some ability to “connect” with other users. This could be done by collecting user data, storing it in a database, and sharing it back with other users. Or this could be done by incorporating real-time connections and communication via Sockets or WebRTC. 
 
-See project [here](https://fascinated-slime-petunia.glitch.me/).
+See project [here](http://stick-it-2.glitch.me/).
 
 ## Project Plan
 ### Design and Planning
